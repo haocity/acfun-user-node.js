@@ -28,8 +28,8 @@ http.get(web+start, function(res) {
   jsony=JSON.parse(jsonx);
   if (jsony.success) {
     acfunuser=jsony.userjson
-    //下面的acfun为 database 为tablename
-    connection.query("INSERT INTO `acfun`.`user5` (`uid`, `name`, `level`, `currExp`, `sign`, `posts`, `comments`, `follows`, `fans`, `lastLoginDate`, `regTime`, `comeFrom`, `views`) VALUES ("+acfunuser.uid+",'"+acfunuser.name+"',"+ acfunuser.level+","+ acfunuser.currExp+",'"+ acfunuser.sign+"',"+acfunuser.posts+", "+acfunuser.comments+","+acfunuser.follows+","+acfunuser.fans+",'"+acfunuser.lastLoginDate+"','"+acfunuser.regTime+"','"+acfunuser.comeFrom+"',"+ acfunuser.views+")", function(err, rows, fields) {
+    //下面的acfun为 database ,user为tablename
+    connection.query("INSERT INTO `acfun`.`user` (`uid`, `name`, `level`, `currExp`, `sign`, `posts`, `comments`, `follows`, `fans`, `lastLoginDate`, `regTime`, `comeFrom`, `views`) VALUES ("+acfunuser.uid+",'"+acfunuser.name+"',"+ acfunuser.level+","+ acfunuser.currExp+",'"+ acfunuser.sign+"',"+acfunuser.posts+", "+acfunuser.comments+","+acfunuser.follows+","+acfunuser.fans+",'"+acfunuser.lastLoginDate+"','"+acfunuser.regTime+"','"+acfunuser.comeFrom+"',"+ acfunuser.views+")", function(err, rows, fields) {
       //if (err) throw err;
     console.log('uid: '+acfunuser.uid+'  mysql write success');
      });
