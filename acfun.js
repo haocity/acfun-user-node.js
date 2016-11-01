@@ -13,7 +13,7 @@ var number=70*10000
 var timefrequency=10
 var end=start+number
 connection.connect();
-var myInterval=setInterval(getjson,10,start)
+var myInterval=setInterval(getjson,10)
 function getjson(){
 var nowuid=start
 //这里偷懒了下 直接在请求到指定数量后5s关闭链接
